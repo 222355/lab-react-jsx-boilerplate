@@ -25,6 +25,18 @@ export default class AppClass extends Component{
     ]
     return data;
   }
-
   // code here
+render(){
+  return(
+    <>
+    <div class='image-gallary'>
+      {
+        this.imageData().map(data=>(
+          <img id={data.id} src={data.img}/>
+        ))
+      }
+    </div>
+    </>
+  )
+}
 }
