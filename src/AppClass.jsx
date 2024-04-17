@@ -30,6 +30,7 @@ render(){
   return(
     <>
     <div class='image-gallary'>
+      <h1>Kalvium gallary</h1>
       {
         this.imageData().map(data=>(
           <img id={data.id} src={data.img}/>
