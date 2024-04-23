@@ -1,43 +1,23 @@
 import { Component } from "react";
 import "./App.css"
 import elephant from "./images/elephant.jpeg";
-
-export default class AppClass extends Component{
-  
-  imageData = ()=>{
-    let data = [
-      {
-        id:1,
-        img:elephant
-      },
-      {
-        id:2,
-        img:elephant
-      },
-      {
-        id:3,
-        img:elephant
-      },
-      {
-        id:4,
-        img:elephant
-      }
-    ]
-    return data;
-  }
-  // code here
-render(){
-  return(
-    <>
-    <div class='image-gallary'>
-      <h1>Kalvium gallary</h1>
-      {
-        this.imageData().map(data=>(
-          <img id={data.id} src={data.img}/>
-        ))
-      }
-    </div>
+import DataComponents from "./Components/Datacomponents";
+     class AppClass extends Component{
+      
+      render(){
+        return(
+          <>
+          <div className='image-gallary'>
+          <h1>Kalvium gallary</h1>
+          {DataComponents().map((data)=>(
+              <Image key ={data.ind} img={data.img} alt={`Elephant${data.i}`}></Image>
+            ))}
+          </div>
     </>
   )
 }
 }
+const Image=({img,alt})=>{
+  return <img src={img} alt={alt}/>
+}
+export default AppClass
